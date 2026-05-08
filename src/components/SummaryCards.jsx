@@ -1,6 +1,8 @@
-import { formatMoney } from '../utils';
+import { useCurrency } from '../context/CurrencyContext';
 
 export default function SummaryCards({ income, expense, balance }) {
+  const { formatMoney } = useCurrency();
+
   return (
     <section className="cards" id="summaryCards">
       <div className="card card-income">

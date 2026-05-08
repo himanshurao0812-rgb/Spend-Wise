@@ -19,6 +19,7 @@ function generateId() {
 }
 
 export default function useTransactions() {
+  
   const [transactions, setTransactions] = useState(() => dbGetAll());
 
   // Refresh from localStorage

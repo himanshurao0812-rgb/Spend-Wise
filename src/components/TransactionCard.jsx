@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { formatMoney, formatDate, CATEGORY_EMOJI } from '../utils';
+import { formatDate, CATEGORY_EMOJI } from '../utils';
+import { useCurrency } from '../context/CurrencyContext';
 
 export default function TransactionCard({ txn, onEdit, onDelete }) {
+  const { formatMoney } = useCurrency();
   const [confirming, setConfirming] = useState(false);
 
   const emoji = CATEGORY_EMOJI[txn.category] || '📦';
